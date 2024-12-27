@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <script src="color-modes.js"></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.122.0" />
+    <title>Uy tieso</title>
+
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/blog/"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"
+    />
+
+    <link href="bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+          inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet" />
+  </head>
+  <body>
+    
+
+    <div
+      class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+    >
+      
+      <ul
+        class="dropdown-menu dropdown-menu-end shadow"
+        aria-labelledby="bd-theme-text"
+      >
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="light"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" width="1em" height="1em">
+              <use href="#sun-fill"></use>
+            </svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="dark"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" width="1em" height="1em">
+              <use href="#moon-stars-fill"></use>
+            </svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center active"
+            data-bs-theme-value="auto"
+            aria-pressed="true"
+          >
+            <svg class="bi me-2 opacity-50" width="1em" height="1em">
+              <use href="#circle-half"></use>
+            </svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol
+        id="aperture"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <path
+          d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"
+        />
+      </symbol>
+      <symbol id="cart" viewBox="0 0 16 16">
+        <path
+          d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+        />
+      </symbol>
+      <symbol id="chevron-right" viewBox="0 0 16 16">
+        <path
+          fill-rule="evenodd"
+          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+        />
+      </symbol>
+    </svg>
+
+    <div class="container">
+      <header class="border-bottom lh-1 py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-4 pt-1">
+            
+          </div>
+          <div class="col-4 text-center">
+            <a
+              class="blog-header-logo text-body-emphasis text-decoration-none"
+              href="#"
+              >Aloha mi Cami </a
+            >
+          </div>
+          <div class="col-4 d-flex justify-content-end align-items-center">
+            <a class="link-secondary" href="#" aria-label="Search">
+              
+                <title>Search</title>
+                <circle cx="10.5" cy="10.5" r="7.5" />
+                <path d="M21 21l-5.2-5.2" />
+              </svg>
+            </a>
+            
+          </div>
+        </div>
+      </header>
+
+
+    </div>
+
+    <main class="container">
+      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+        <div class="col-lg-6 px-0">
+          <h1 class="display-4 fst-italic">¿Te gustaria ser mi polola?</h1>
+          <p class="lead my-3">
+            Antes que respondas lee, lo que dice a continuacion mi guapa 😎✨
+          </p>
+        </div>
+      </div>
+
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div
+            class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary-emphasis"
+                >¿Por qué sí?</strong
+              >
+              <h3 class="mb-0">¡Conmigo son puras ventajas!</h3>
+              <br />
+              <p class="card-text mb-auto">
+                Te hare reir, lo pasaras bien, nunca te dara hambre, tendras tiempo de calidad, cocinaremos juntos, tendras regalos, siempre estarás feliz y asi con todo infinitamente.
+              </p>
+            </div>
+
+            <div class="col-auto d-none d-lg-block">
+              <img src="image.png" alt=""
+                class="bd-placeholder-img"
+                width="340"
+                height="270"
+                role="img"
+                aria-label="Placeholder: Thumbnail"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#55595c" />
+                
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div
+            class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success-emphasis"
+                >¿Tienes hambre?</strong
+              >
+              <h3 class="mb-0">No te preocupes ahi hacemos algo para comer</h3>
+              <br>
+              <p class="mb-auto">
+                Soy experto en cocina gracias a ti y ahi resvolvemos 😎
+              </p>
+              <br>
+              <img src="20241206_184833.jpg" alt="" width="320">
+
+              
+            </div>
+            
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div
+            class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success-emphasis"
+                >Seriamos y sisomos estos:</strong
+              >
+              
+              <p class="mb-auto">
+                Si es que somos los mejores, no  hay definicion entre nosotros 
+              </p>
+              <br>
+              <img src="IMG_20241209_215018_187.jpg" alt="" width="320">
+              
+            </div>
+            
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div
+            class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success-emphasis"
+                >Sabemos cocinar</strong
+              >
+              
+              <p class="mb-auto">
+                Despues de tanto tiempo siendo expertos en la cocina sabemos hacer de todo todito y que nadie diga que nao nao sisomos expertos ✨
+                
+                
+              </p>
+              <br>
+              <img src="20241209_193214.jpg" alt="" width="320">
+              
+            </div>
+            
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div
+            class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success-emphasis"
+                >Siempre estaras en buenas manos</strong
+              >
+              <h3>Siempre</h3>              
+              <p class="mb-auto">
+                Siempre lo estaras corazon bello, nunca estaras en malas manos, te cuidare, te querre y siempre te protegere mi corazón, bella tu 🐥
+                
+                
+              </p>
+              <br>
+              <video src="20241115_135711.mp4" autoplay loop muted controls></video>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-5">
+        <div class="col-md-8">
+          
+
+          <article class="blog-post" style="text-align: center;">
+            <h2 class="display-5 link-body-emphasis mb-1" id="pregunta">¿Y qué dices? ¿Aceptas ser mi polola?</h2>
+            <br>
+            <button class="btn-yes" onclick="mostrarFelicidades()">Sí</button>
+            <button class="btn-no" onclick="ocultarNo()">No</button>
+            <p id="mensaje" style="display: none; margin-top: 20px; font-size: 18px; color: green;"></p>
+            <canvas id="confetti-canvas" style="position: absolute; left: 0; width: 100%; height: 200px; pointer-events: none; top: 3500px;"></canvas>
+          </article>
+          
+          <style>
+            .btn-yes, .btn-no {
+              background-color: #28a745; /* Verde para "Sí" */
+              color: white;
+              border: none;
+              padding: 10px 20px;
+              font-size: 16px;
+              cursor: pointer;
+              margin: 5px;
+            }
+          
+            .btn-no {
+              background-color: #dc3545; /* Rojo para "No" */
+            }
+          
+            .btn-yes:hover, .btn-no:hover {
+              opacity: 0.8;
+            }
+          </style>
+          
+          <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+          <script>
+            function ocultarNo() {
+              const botonNo = document.querySelector('.btn-no');
+              botonNo.style.display = 'none';
+            }
+          
+            function mostrarFelicidades() {
+              const mensaje = document.getElementById('mensaje');
+              mensaje.style.display = 'block';
+              mensaje.textContent = '¡Felicidades, ya es oficial! 🎉';
+              lanzarConfeti();
+            }
+          
+            function lanzarConfeti() {
+              const canvas = document.getElementById('confetti-canvas');
+              const confetti = window.confetti.create(canvas, { resize: true });
+          
+              // Lanza confeti desde la parte superior del texto
+              confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { x: 0.5, y: 0.4 },  // Ajustado al origen del texto
+              });
+          
+              setTimeout(() => {
+                confetti({
+                  particleCount: 100,
+                  spread: 100,
+                  origin: { x: 0.4, y: 0.4 },  // Ajustado al origen del texto
+                });
+              }, 500);
+          
+              setTimeout(() => {
+                confetti({
+                  particleCount: 100,
+                  spread: 100,
+                  origin: { x: 0.6, y: 0.4 },  // Ajustado al origen del texto
+                });
+              }, 1000);
+            }
+          </script>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+
+          
+
+          
+        </div>
+
+        
+      </div>
+    </main>
+
+    
+    <script src="bootstrap.bundle.min.js"></script>
+  </body>
+</html>
